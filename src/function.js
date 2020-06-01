@@ -34,3 +34,18 @@ console.log(book);
 const myLocation = (location) => console.log(`My location is ${location}`);
 
 myLocation('Dubai');
+
+const user = {
+    username: "Chris",
+    location: "Dubai",
+    sayName: function () {
+        console.log(`My name is ${this.username}`);
+
+        const fullName = () => {
+            console.log(`My name is ${this.username} and I live in ${this.location}`);
+        };
+        fullName();
+    }
+};
+
+user.sayName();
