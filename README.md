@@ -1,1 +1,1 @@
-# es6practice
+ES6 Project
