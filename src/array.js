@@ -3,7 +3,6 @@ const shoppingList = ["Milk", "Cow", "Eggs", "Choco"];
 shoppingList.forEach((product, index) => {
     console.log(`The index is ${index} and the product is ${product}`)
 });
-
 //Map
 const copyList = shoppingList.map(item => {
     return item;
@@ -14,7 +13,7 @@ console.log(copyList);
 
 //Filter List
 
-const filterList = shoppingList.filter(item => { return item === 'Eggs' });
+const filterList = shoppingList.filter((item => { return item === 'Eggs' }));
 console.log(filterList);
 
 const s = [5, 6, 2];
@@ -39,12 +38,12 @@ const myConcat = (arr1, arr2) => {
 console.log(myConcat([1, 2], [3, 4, 5]));
 
 
-const isEthio = city => {
-    const names = ['Hossana', 'Sheger', 'Adama'];
-    return names.includes(city) ? "Ethiopia" : "Rest of the world.";
+const todo1 = td => {
+    const names = ['sleeping', 'reading', 'walking'];
+    return names.includes(td) ? "busy" : "idle";
 }
 
-console.log(isEthio("Assosa"));
+console.log(todo1("reading"));
 
 /********** */
 
@@ -55,7 +54,7 @@ ages.push(25);
 
 
 const sum = (...args) => {
-    return args.reduce((a, b) => a + b, 0);
+    return args.reduce((a, b) => a + b, 0); //!!!
 }
 console.log(sum(14, 25, 35));
 
@@ -64,13 +63,110 @@ console.log(sum(14, 25, 35));
 const arr1 = ['Jan', 'Feb', 'Mar'];
 
 arr2 = [...arr1];
-console.log(arr2); 
+console.log(arr2);
+
+//destructing assignments to assign variable from Arrays.. 
+
+// swapping arrays 
+
+let y = 2, x = 6;
+[y, x] = [x, y]; // y=6, x=2  
 
 
-const contact = {
-    usname: 'Christian Tekle',
-    age: 27,
-    dateofbirth: 1993
-}
-//const {usname, age, dateofbirth} = contact;
-//const {usname: username, age: userage, dateofbirth: userdob} = contact;
+const items = [
+    {
+        itemName: 'Books',
+        price: 25
+    },
+    {
+        itemName: 'Laptop',
+        price: 500
+    },
+    {
+        itemName: 'phones',
+        price: 200
+    },
+    {
+        itemName: 'TV',
+        price: 2000
+    }
+];
+const filteredItems = items.filter(item => {
+    return item.price > 500;
+});
+console.log(filteredItems);
+
+
+//find
+const foundItem = items.find(item => {
+    return item.price === 25;
+});
+console.log(foundItem);
+
+
+//foreach
+items.forEach(item => {
+    console.log(item.price);
+})
+
+
+//map
+const itemPriceList = items.map(item => {
+    return item.price;
+});
+console.log(`Prices: ${itemPriceList[0]}`);
+
+
+//some T/F
+const inExpItem = items.some(item => {
+    return item.price <= 25;
+});
+console.log(inExpItem);
+
+
+//every similar to some but checks every item.
+
+//reduce ********
+
+const totalPrice = items.reduce((lastTotal, item) => {
+    return lastTotal + item.price;
+}, 0);
+console.log(totalPrice);
+//
+
+//includes
+const includedPrice = itemPriceList.includes(25);
+console.log(includedPrice);
+
+const tasks = [
+    {
+        id: 25,
+        name: 'shopping',
+        status: 'pending'
+    },
+    {
+        id: 15,
+        name: 'washing dishes',
+        status: 'pending'
+    },
+    {
+        id: 10,
+        name: 'going to the gym',
+        status: 'pending'
+    }
+
+];
+
+const filteredTsks = tasks.filter(task => {
+    return task.status === 'pending';
+});
+console.log(filteredTsks);
+
+
+
+const markTaskAsDone = (item) => {
+    tasks[1]. status = 'done';
+    
+};
+markTaskAsDone();
+console.log(tasks);

@@ -79,3 +79,4 @@ const users = {
 };
 const { chris: { dob, email } } = users;
 //const { chris: { dob: chrisDob, email: chrisEmail } } = users;
+
