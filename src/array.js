@@ -170,3 +170,10 @@ const markTaskAsDone = (item) => {
 };
 markTaskAsDone();
 console.log(tasks);
+
+const gardening = tasks.push({
+    id: 22,
+    name: "trying",
+    status: 'pending'
+});
+console.log(tasks);

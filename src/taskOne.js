@@ -17,14 +17,48 @@ const tasks = [
 
 ];
 
-const main = () => {
-
-    
-    const markTaskAsDone = (item) => {
-        tasks[1]. status = 'done';
-        
-    };
-    markTaskAsDone();
-    console.log(tasks);
-
+// ****  TASK 2 A: *****
+const markTaskAsDone = (item) => {
+    tasks[1].status = 'done';
 };
+
+markTaskAsDone();
+
+//****  TASK 2 B: *****
+const markTaskAsPending = (item) => {
+    tasks[1].status = 'progress';
+    tasks[0].status = 'done';
+}
+markTaskAsPending();
+
+// ****  TASK 2 C: *****
+// add a task with name "Gardening"
+const addNewTask = () => {
+    tasks.push({
+        id: 22,
+        name: 'gardening',
+        status: 'pending'
+    });
+};
+
+addNewTask();
+/*
+const deleteTask = () => {
+    tasks.filter((item) => {
+    return item.status === 'pending' || item.status === 'progress';
+})
+}
+deleteTask();
+*/
+
+
+console.log(tasks);
+
+
+
+
+
+
+
+
+
