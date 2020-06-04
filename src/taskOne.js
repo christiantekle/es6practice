@@ -1,82 +1,78 @@
 const tasks = [
     {
-        id: 25,
+        id: 1,
         name: 'shopping',
         status: 'pending'
     },
     {
-        id: 15,
+        id: 2,
         name: 'washing dishes',
         status: 'pending'
     },
     {
-        id: 10,
+        id: 3,
         name: 'going to the gym',
         status: 'pending'
     }
 
 ];
-// ****  TASK 2 A: *****
+
 const markTaskAsDone = (task) => {
     task.status = 'done';
 };
 
 markTaskAsDone(tasks[1]);
 
-//****  TASK 2 B: *****
+
 const markTaskAsPending = (task) => {
-    tasks[1].status = 'progress';
-    //tasks[0].status = 'done';
+    task.status = 'pending';
 }
 
 markTaskAsPending(tasks[1]);
 markTaskAsDone(tasks[0]);
-// ****  TASK 2 C: *****
-// add a task with name "Gardening"
+
+
 const addNewTask = (task) => {
-    const gardening = tasks.push({
-        id: 22,
-        name: 'gardening',
-        status: 'pending'
-    });
-    const writingProject = tasks.push({ id: 22, name: 'Start writing project', status: 'pending' });
+    tasks.push(task);
 };
-
-addNewTask(tasks);
-/*
-const deleteTask = () => {
-    tasks.filter((item) => {
-    return item.status === 'pending' || item.status === 'progress';
-})
+const gardening = {
+    id: 4,
+    name: 'gardening',
+    status: 'pending'
+};
+const writingProject = {
+    id: 5,
+    name: 'Start writing project',
+    status: 'pending'
 }
-deleteTask();
-*/
-
-// ****  TASK 2 D: *****
-// remove one of the sample tasks
-
-const deleteTask = (task) => {
-    task.pop();
-};
-deleteTask(tasks);
+addNewTask(gardening);
+addNewTask(writingProject);
 
 
-// ****  TASK 2 E: *****
-// list all of the tasks that are marked as done
+/*const deleteTask = (dltTsk) => {
+    tasks.pop(dltTsk);
+};*/
+const deleteTask = (taskId) => {
+    return tasks.filter((task) => {
+        return task.id !== taskId;
+    })
+}
+const newTasks = deleteTask(tasks[4].id);
+console.log(newTasks);
+
+
 const getCompletedTasks = (task) => {
     return task.filter(item => item.status === 'done');
-};     
+};
 const completedTasks = getCompletedTasks(tasks);
 console.log(completedTasks);
 
-// list all the tasks that are pending
 const getPendingTasks = (task) => {
     return task.filter(item => item.status === 'pending');
 }
 const pendingTasks = getPendingTasks(tasks);
 console.log(pendingTasks);
 
-//Check if all the tasks are done
 const isAllDone = (task) => {
     return task.every(item => item.status == 'done');
 };
@@ -84,7 +80,6 @@ const isAllDone = (task) => {
 const isDone = isAllDone(tasks);
 console.log(isDone);
 
-//Check if there is at least one pending task
 
 const isSomePending = (task) => {
     return task.some(item => item.status === 'pending');
@@ -98,6 +93,18 @@ console.log(tasks);
 
 
 
+const getTaskById = (taskId) => {
+    const taskIds = tasks.map((task) => { return task.id });
+
+    if (taskIds.includes(taskId)) {
+        return tasks.filter((task) => task.id === taskId);   
+    }
+    else {
+        return "Not Found";
+    }
+}
+const getTask = getTaskById(2);
+console.log(getTask);
 
 
 
