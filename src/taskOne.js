@@ -16,24 +16,24 @@ const tasks = [
     }
 
 ];
-
 // ****  TASK 2 A: *****
-const markTaskAsDone = (item) => {
-    tasks[1].status = 'done';
+const markTaskAsDone = (task) => {
+    task.status = 'done';
 };
 
-markTaskAsDone();
+markTaskAsDone(tasks[1]);
 
 //****  TASK 2 B: *****
-const markTaskAsPending = (item) => {
+const markTaskAsPending = (task) => {
     tasks[1].status = 'progress';
-    tasks[0].status = 'done';
+    //tasks[0].status = 'done';
 }
-markTaskAsPending();
 
+markTaskAsPending(tasks[1]);
+markTaskAsDone(tasks[0]);
 // ****  TASK 2 C: *****
 // add a task with name "Gardening"
-const addNewTask = () => {
+const addNewTask = (task) => {
     const gardening = tasks.push({
         id: 22,
         name: 'gardening',
@@ -42,8 +42,7 @@ const addNewTask = () => {
     const writingProject = tasks.push({ id: 22, name: 'Start writing project', status: 'pending' });
 };
 
-
-addNewTask();
+addNewTask(tasks);
 /*
 const deleteTask = () => {
     tasks.filter((item) => {
@@ -95,8 +94,6 @@ console.log(isPending);
 
 
 console.log(tasks);
-
-
 
 
 
