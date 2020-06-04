@@ -34,12 +34,14 @@ markTaskAsPending();
 // ****  TASK 2 C: *****
 // add a task with name "Gardening"
 const addNewTask = () => {
-    tasks.push({
+    const gardening = tasks.push({
         id: 22,
         name: 'gardening',
         status: 'pending'
     });
+    const writingProject = tasks.push({ id: 22, name: 'Start writing project', status: 'pending' });
 };
+
 
 addNewTask();
 /*
@@ -50,6 +52,46 @@ const deleteTask = () => {
 }
 deleteTask();
 */
+
+// ****  TASK 2 D: *****
+// remove one of the sample tasks
+
+const deleteTask = () => {
+    tasks.pop();
+};
+deleteTask();
+
+
+// ****  TASK 2 E: *****
+// list all of the tasks that are marked as done
+const getCompletedTasks = () => {
+    return tasks.filter(item => item.status === 'done');
+};     
+const completedTasks = getCompletedTasks();
+console.log(completedTasks);
+
+// list all the tasks that are pending
+const getPendingTasks = () => {
+    return tasks.filter(item => item.status === 'pending');
+}
+const pendingTasks = getPendingTasks();
+console.log(pendingTasks);
+
+//Check if all the tasks are done
+const isAllDone = () => {
+    return tasks.every(item => item.status == 'done');
+};
+
+const isDone = isAllDone();
+console.log(isDone);
+
+//Check if there is at least one pending task
+
+const isSomePending = () => {
+    return tasks.some(item => item.status === 'pending');
+}
+const isPending = isSomePending();
+console.log(isPending);
 
 
 console.log(tasks);
