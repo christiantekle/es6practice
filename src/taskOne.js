@@ -55,41 +55,41 @@ deleteTask();
 // ****  TASK 2 D: *****
 // remove one of the sample tasks
 
-const deleteTask = () => {
-    tasks.pop();
+const deleteTask = (task) => {
+    task.pop();
 };
-deleteTask();
+deleteTask(tasks);
 
 
 // ****  TASK 2 E: *****
 // list all of the tasks that are marked as done
-const getCompletedTasks = () => {
-    return tasks.filter(item => item.status === 'done');
+const getCompletedTasks = (task) => {
+    return task.filter(item => item.status === 'done');
 };     
-const completedTasks = getCompletedTasks();
+const completedTasks = getCompletedTasks(tasks);
 console.log(completedTasks);
 
 // list all the tasks that are pending
-const getPendingTasks = () => {
-    return tasks.filter(item => item.status === 'pending');
+const getPendingTasks = (task) => {
+    return task.filter(item => item.status === 'pending');
 }
-const pendingTasks = getPendingTasks();
+const pendingTasks = getPendingTasks(tasks);
 console.log(pendingTasks);
 
 //Check if all the tasks are done
-const isAllDone = () => {
-    return tasks.every(item => item.status == 'done');
+const isAllDone = (task) => {
+    return task.every(item => item.status == 'done');
 };
 
-const isDone = isAllDone();
+const isDone = isAllDone(tasks);
 console.log(isDone);
 
 //Check if there is at least one pending task
 
-const isSomePending = () => {
-    return tasks.some(item => item.status === 'pending');
+const isSomePending = (task) => {
+    return task.some(item => item.status === 'pending');
 }
-const isPending = isSomePending();
+const isPending = isSomePending(tasks);
 console.log(isPending);
 
 

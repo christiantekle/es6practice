@@ -37,7 +37,7 @@ myLocation('Dubai');
 
 //this.. 
 const user = {
-    username: "Chris",
+    username: "John",
     location: "Dubai",
     sayName: function () {
         console.log(`My name is ${this.username}`);
@@ -64,7 +64,7 @@ const greeting = (name) => `Hello ${name}`;
 //destructing assignments 
 
 const contact = {
-    usname: 'Christian Tekle',
+    usname: 'John',
     age: 27,
     dateofbirth: 1993
 }
@@ -72,11 +72,11 @@ const contact = {
 //const {usname: username, age: userage, dateofbirth: userdob} = contact;
 
 const users = {
-    chris: {
+    John: {
         dob: 1993,
-        email: 'christiantekle@gmail.com'
+        email: 'test@gmail.com'
     }
 };
-const { chris: { dob, email } } = users;
-//const { chris: { dob: chrisDob, email: chrisEmail } } = users;
+const { John: { dob, email } } = users;
+//const { john: { dob: johnDob, email: johnEmail } } = users;
 

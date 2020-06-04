@@ -173,7 +173,7 @@ console.log(tasks);
 
 const gardening = tasks.push({
     id: 22,
-    name: "trying",
+    name: "gardening",
     status: 'pending'
 });
 console.log(tasks);
