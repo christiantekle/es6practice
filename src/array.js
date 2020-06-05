@@ -165,8 +165,8 @@ console.log(filteredTsks);
 
 
 const markTaskAsDone = (item) => {
-    tasks[1]. status = 'done';
-    
+    tasks[1].status = 'done';
+
 };
 markTaskAsDone();
 console.log(tasks);
@@ -177,3 +177,163 @@ const gardening = tasks.push({
     status: 'pending'
 });
 console.log(tasks);
+
+
+const movies = [
+    {
+        artist: 'Denzel',
+        title: 'The book of Eli',
+        release_year: 1993,
+        formats: ['CD', 'DVD'],
+
+    },
+    {
+        artist: 'Will Smith',
+        title: 'The pursuit of happiness',
+        release_year: 1995,
+        format: ['CD', 'DVD']
+    }
+];
+
+const movieProductions =
+{
+    Netflix: {
+        actors: {
+            actor1: 'Denzel',
+            actor2: 'Will Smith',
+            actor3: 'Kevin'
+        },
+        titles: {
+            title1: 'John Q',
+            title2: 'I am legend',
+            title3: 'Irresponsible'
+        }
+    },
+
+    HBO: {
+        actors: {
+            actor1: 'Dicaprio',
+            actor2: 'Tom Hanks',
+            actor3: 'Samuel L. Jackson'
+        },
+        titles: {
+            title1: 'Titanic',
+            title2: 'Capitain Philips',
+            title3: 'Django unchained'
+        }
+    }
+};
+const netflixActor1 = movieProductions.Netflix.actors.actor1;
+console.log(netflixActor1);
+
+
+const ourPets = [
+    {
+        animalType: "cat",
+        names: [
+            "Fluffy",
+            "Kit-Cat"
+        ]
+    },
+    {
+        animalType: "dog",
+        names: [
+            "Rocky",
+            "Frankie"
+        ]
+    }
+];
+const catName1 = ourPets[0].names[0];
+console.log(catName1);
+
+
+var myArray = [];
+
+let i = 5;
+while (i >= 0) {
+    myArray.push(i);
+    i--;
+}
+console.log(myArray);
+
+
+for (let i = 9; i >= 0; i -= 2) {
+    myArray.push(i)
+}
+console.log(myArray);
+
+for (let i = 0; i < myArray.length; i++) {
+    console.log(myArray[i])
+}
+
+//Sum 
+let myArrayTotal = 0;
+for (let i = 0; i < myArray.length; i++) {
+    myArrayTotal += myArray[i];
+}
+console.log(myArrayTotal);
+
+
+// nesting for loop
+
+const multiplyAll = (arr) => {
+    let product = 1;
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            product *= arr[i][j];
+        }
+    }
+    return product;
+}
+
+const productReturned = multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+console.log(productReturned);
+
+
+
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
+const lookUpProfile = (name, prop) => {
+    for (let i = 0; i < contacts.length; i++) {
+        if(contacts[i].firstName === name) {
+            if (contacts[i].hasOwnProperty(prop)){
+                return contacts[i][prop];
+            }
+            else {
+                return "prop not found";
+            }
+        }
+        else {
+            return "contact not found";
+        }
+    }
+}
+
+
+const contactDetail = lookUpProfile("Akira", "likes");
+console.log(contactDetail);
