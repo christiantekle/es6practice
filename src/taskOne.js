@@ -49,15 +49,13 @@ addNewTask(gardening);
 addNewTask(writingProject);
 
 
-/*const deleteTask = (dltTsk) => {
-    tasks.pop(dltTsk);
-};*/
 const deleteTask = (taskId) => {
     return tasks.filter((task) => {
         return task.id !== taskId;
     })
 }
-const newTasks = deleteTask(tasks[4].id);
+const taskId = tasks[2].id;
+const newTasks = deleteTask(taskId);
 console.log(newTasks);
 
 
