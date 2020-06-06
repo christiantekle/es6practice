@@ -80,3 +80,28 @@ const users = {
 const { John: { dob, email } } = users;
 //const { john: { dob: johnDob, email: johnEmail } } = users;
 
+
+
+const randomWholeNum = () => {
+    return Math.floor(Math.random() * 10);
+}
+
+
+const checkSign = (num) => {
+    return (num > 0) ? 'Positive' : (num < 0) ? 'Negative' : "Zero";
+}
+console.log(checkSign(7));
+
+let numbersInArray = [1, 2, 3, 4, 5];
+console.log(...numbersInArray);
+console.log(Math.max(...numbersInArray));
+
+
+const sumUpFn = (...args) => {
+    let result = 0;
+    for (let i=0; i<args.length; i++) {
+        result += args[i];
+    }
+    return result;
+}
+console.log(sumUpFn(10, 20, 30));
